@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='foundation.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <title>CS222 Final Project - MZZ Data/JPEG Encoder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class='header'>
+        <h1>MZZ Data/JPEG Encoder</h1>
+        <h3>CS222 Final Project</h3>
+        <span>Joshua Meier, Ben Zheng, Larry Zhang</span>
+    </div>
+    <div id='content'>
+        {% block body %}{% endblock %}
+    </div>
+</body>

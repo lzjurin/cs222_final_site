@@ -1,0 +1,44 @@
+{% extends 'layout.html.jinja' %}
+{% block body %}
+<div lass='row desc'>
+    MZZ takes any file, converts it to a bitstream, and encodes the bitstream as a series of JPEG images to achieve compression and make use of existing photo storage sources, such as Facebook or Flickr. Upload your file here to have it encoded in JPEG format for storage online, or upload a ZIP of your images to be converted back into the original file!
+</div>
+<div>
+    <span>A ZIP of your images or your binary file will automatically download to your computer, depending on whether you are encoding or decoding.</span>
+    <form action='/' method='post' enctype="multipart/form-data">
+        <fieldset>
+            <div style='padding-right: 15%; padding-left: 15%' align='center'>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label><span id='label'>Files</span>
+                            <input class='button' type='file' name='file'>
+                        </label>
+                    </div>
+                    <div class="large-6 columns">
+                        <label>En/Decode
+                            <select name='code'>
+                                <option value="encode">Encode</option>
+                                <option value="decode">Decode</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input class='button' type='submit' value='Upload'>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class='row errors'>
+                {% for category, message in messages %}
+                    <p>{{ category }}: {{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}
