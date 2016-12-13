@@ -14,3 +14,4 @@ requests>=0.11.1
 greenlet>=0.4.10
 gevent>=1.1.2
 python-resize-image>=1.1.10
+numpy>=1.11.2
